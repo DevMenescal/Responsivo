@@ -1,0 +1,106 @@
+/*
+        == BreakPoints ==
+
+    ===================================
+        Telas Pequenas: até 600px
+        Smartphones: de 600px a 768px
+        Tablets: 768px a 992px
+        Desktop e Notebooks: 992px a 1200px
+        Telas Grandes: 1200px ou +
+    =====================================
+
+    Lembrando de sempre aplicar o conceito "Mobile First"
+
+    ===================
+    == Media Types: == 
+    ===================
+
+    1) all: Aplica-se a todos os dispositivos.
+
+    2) screen: Aplica-se a dispositivos de tela, como monitores de computador, tablets e smartphones.
+
+    3) print: Aplica-se a documentos que são destinados para impressão.
+
+    4) speech: Aplica-se a dispositivos de saída de fala, como sintetizadores de voz.
+
+    ====================
+    == Media Features ==
+    ====================
+
+    1) width: Largura da área de visualização do dispositivo.
+
+    2) height: Altura da área de visualização do dispositivo.
+
+    3) orientation: Orientação da tela, podendo ser landscape (paisagem) ou portrait (retrato).
+
+    4) min-width: Largura mínima da área de visualização.
+
+    5) max-width: Largura máxima da área de visualização.
+
+    =========================
+    == Sintaxe Media Query ==
+    =========================
+
+    @media media type (media feature) {...}
+
+        Ex: @media screen (min-width:600px) {}
+
+    ========================
+    == Operadores Lógicos == 
+    ========================
+
+    1) and: combina duas ou mais condições e exige que todas as condições sejam verdadeiras para que a media query seja aplicada.
+
+        Ex: @media screen and (min-width: 768px) and (max-width: 1024px) {...}
+
+    2) or (,): combina duas ou mais condições e exige que pelo menos uma das condições seja verdadeira para que a media query seja aplicada.
+
+        @media screen and (min-width: 768px), print {...}
+
+    3) not: nega uma condição e exige que a condição seja falsa para que a media query seja aplicada.
+
+*/
+
+/* Exemplo de media Print */
+
+@media print {
+    header{
+        display: none;
+    }
+
+    body{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 25px;
+    }
+
+    footer{
+        display: none;
+    }
+}
+
+/* Exemplo para Media Screen */
+@media screen and (min-width:768px){
+
+
+    nav li{
+        display: inline-block;
+        width:200px;
+    }
+
+    main{
+        background-color: aqua;
+    }
+}
+
+@media screen and (min-width:1200px) and (orientation:landscape){
+    html, body{
+        background-color: chartreuse;
+    }
+
+    nav{
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
+    }
+
+}
